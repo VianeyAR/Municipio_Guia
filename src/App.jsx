@@ -1,30 +1,220 @@
-import React, { useState } from 'react'
-import HomeQuiz from './pages/HomeQuiz'
-import Captura from './pages/Captura'
-import Juego from './pages/Juego'
-import {Route, Routes} from 'react-router'
+import { useState } from "react";
+import "./App.css";
 
+function App() {
+  const [inputValue, setInputValue] = useState({
+    test1: "",
+    test2: "",
+    password: "",
+    validEmail: "",
+    checkbox: "",
+    date: "",
+    color: "",
+    datetimelocal: "",
+    file: "",
+    hidden: "",
+    image: "",
+    month: "",
+    number: "",
+    radio: "",
+    range: "",
+    reset: "",
+    search: "",
+    submit: "",
+    tel: "",
+    text: "",
+    time: "",
+    url: "",
+    week: "",
+  });
 
+  const handleChangeInput = (e) => {
+    setInputValue({
+      ...inputValue,
+      [e.target.name]: e.target.value,
+    });
+    console.log(inputValue);
+  };
 
-
-
-const App = () => {
-  const [estado, setEstado] = useState()
-  console.log(estado);
-  if (!estado) {
-    return <HomeQuiz setEstado={setEstado}/>
-    
-  }
   return (
     <>
+      <div style={{ textAlign: "center" }}>
+        <img src="./src/img/LogoTuxtepec.png" alt="" align="left" />
+        <img src="./src/img/x.svg" alt="" align="right" />
+        <h2>GuÍa Consultiva De Desempeño Municipal</h2>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <div
+        class="btn-group btn-group-md"
+        role="group"
+        aria-label="Large button group">
+       
+     
+    
+  <button class="btn btn-success" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">ORGANIZACIÓN</button>
+  <button class="btn btn-success" data-bs-target="#exampleModalToggle1" data-bs-toggle="modal">HACIENDA</button>
+  <button class="btn btn-success" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">GESTIÓN DEL TERRITORIO</button>
+  <button class="btn btn-success" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">SERVICIOS PÚBLICOS</button>
+  <button class="btn btn-success" data-bs-target="#exampleModalToggle4" data-bs-toggle="modal">MEDIO AMBIENTE</button>
+  <button class="btn btn-success" data-bs-target="#exampleModalToggle5" data-bs-toggle="modal">DESARROLLO SOCIAL</button>
+  <button class="btn btn-success" data-bs-target="#exampleModalToggle6" data-bs-toggle="modal">DESARROLLO ECÓNOMICO</button>
+  <button class="btn btn-success" data-bs-target="#exampleModalToggle7" data-bs-toggle="modal">GOBIERNO ABIERTO</button>
+    
+  </div>
+     
+      <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">ORGANIZACION</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <div
+        class="btn-group btn-group-md"
+        role="group"
+        aria-label="Large button group">
+      <button class="btn btn-success" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Estructura</button>
+      <button class="btn btn-success" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Planeación</button> 
+      <button class="btn btn-success" data-bs-target="#exampleModalToggle4" data-bs-toggle="modal">Contraloría</button>
+      <button class="btn btn-success" data-bs-target="#exampleModalToggle5" data-bs-toggle="modal">Capacitación</button>     
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Estructura</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <button class="btn btn-success" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Estructuraaa</button>
+      <label htmlFor="color" >Color</label>
+      <input
+      className="mt-2"
+      id="color"
+      onChange={(e) => handleChangeInput(e)}
+      type="color" 
+      name="color"
+      value={inputValue.color} 
+      />
+    <label htmlFor="file" >File</label>
+      <input
+      className="mt-2"
+      id="file"
+      onChange={(e) => handleChangeInput(e)}
+      type="file" 
+      name="file"
+      value={inputValue.file} />
       
-      <Routes>
-        <Route path='/Captura' element={<Captura/>} />
-        <Route path='/Juego' element={<Juego/>} />
-      </Routes>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Regresar a organizacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel3">Planeacion</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <button class="btn btn-success" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">ejemplo</button>
+      <label htmlFor="color" >Color</label>
+      <input
+      className="mt-2"
+      id="color"
+      onChange={(e) => handleChangeInput(e)}
+      type="color" 
+      name="color"
+      value={inputValue.color} 
+      />
+    
+      
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Regresar a organizacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalToggle4" aria-hidden="true" aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel4">Contraloría</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <button class="btn btn-success" data-bs-target="#exampleModalToggle4" data-bs-toggle="modal">ejemplo</button>
+      <label htmlFor="color" >Color</label>
+      <input
+      className="mt-2"
+      id="color"
+      onChange={(e) => handleChangeInput(e)}
+      type="color" 
+      name="color"
+      value={inputValue.color} 
+      />
+    
+      
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Regresar a organizacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalToggle5" aria-hidden="true" aria-labelledby="exampleModalToggleLabel5" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel5">Capacitación</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <button class="btn btn-success" data-bs-target="#exampleModalToggle5" data-bs-toggle="modal">ejemplo</button>
+      <label htmlFor="color" >Color</label>
+      <input
+      className="mt-2"
+      id="color"
+      onChange={(e) => handleChangeInput(e)}
+      type="color" 
+      name="color"
+      value={inputValue.color} 
+      />
+    
+      
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Regresar a organizacion</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
     </>
-  )
+  );
 }
 
-export default App
+export default App;
